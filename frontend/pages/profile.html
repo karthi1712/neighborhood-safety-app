@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Profile | Safety</title>
+  <link rel="stylesheet" href="styles.css">
+  
+</head>
+<body>
+  <div id="navbar"></div>
+  
+  <section class="container page-panel">
+    <div class="page-header">
+      <div>
+        <span class="eyebrow">Profile</span>
+        <h1>Your account details</h1>
+      </div>
+    </div>
+    <div class="card profile-card" id="profileCard">
+      <h2>User info</h2>
+      <p class="muted">Please login to see your saved details.</p>
+    </div>
+  </section>
+  <script src="../assets/js/core/api.js"></script>
+  <script src="../assets/js/core/navbar.js"></script>
+  
+  <script>
+    const user = JSON.parse(localStorage.getItem('user'));
+    const profileCard = document.getElementById('profileCard');
+    if (user) {
+      profileCard.innerHTML = '<h2>' + user.name + '</h2>' +
+        '<p><strong>Email</strong><br>' + user.email + '</p>' +
+        '<p><strong>Mobile</strong><br>' + user.mobile + '</p>' +
+        '<p class="muted">Member since your latest sign-up.</p>';
+    } else {
+      profileCard.innerHTML = '<p class="muted">Login to view your profile information.</p>';
+    }
+  </script>
+</body>
+</html>

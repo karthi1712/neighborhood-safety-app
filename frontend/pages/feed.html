@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Incident Feed | Safety</title>
+  <link rel="stylesheet" href="styles.css">
+  
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+</head>
+<body>
+  <div id="navbar"></div>
+  
+  <section class="container page-panel">
+    <div class="page-header">
+      <div>
+        <span class="eyebrow">Live feed</span>
+        <h1>Incident activity in your area</h1>
+      </div>
+    </div>
+    <div class="card">
+      <div id="feedMap" class="map-block"></div>
+      <input type="hidden" id="userLat" />
+      <input type="hidden" id="userLng" />
+      <div class="location-row">
+        <button class="btn secondary" onclick="setCurrentLocation()">Use my location</button>
+        <span id="current-location">Location unavailable</span>
+      </div>
+      <div class="grid" id="feed"></div>
+    </div>
+  </section>
+  <script src="../assets/js/core/api.js"></script>
+  <script src="../assets/js/core/navbar.js"></script>
+  
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script src="../assets/js/core/pages/feed.js"></script>
+</body>
+</html>

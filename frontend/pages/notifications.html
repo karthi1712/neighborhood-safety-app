@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Notifications | Safety</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div id="navbar"></div>
+  <section class="container page-panel">
+    <div class="page-header">
+      <div>
+        <span class="eyebrow">Notifications</span>
+        <h1>Your latest alerts</h1>
+        <p class="page-subtitle">Nearby incident updates and action reminders are listed here.</p>
+      </div>
+      <button id="markAllRead" class="btn secondary">Mark all read</button>
+    </div>
+    <div id="notificationsList" class="grid notifications-grid"></div>
+  </section>
+  <script src="../assets/js/core/api.js"></script>
+  <script src="../assets/js/core/navbar.js"></script>
+  <script src="../assets/js/core/pages/notifications.js"></script>
+</body>
+</html>

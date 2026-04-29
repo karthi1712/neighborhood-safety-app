@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Report Incident | Safety</title>
+  <link rel="stylesheet" href="styles.css">
+  
+</head>
+<body>
+  <div id="navbar"></div>
+  
+  <section class="container page-panel">
+    <div class="page-header">
+      <div>
+        <span class="eyebrow">Report</span>
+        <h1>Submit a new incident</h1>
+      </div>
+    </div>
+    <div class="card form-card">
+      <label for="title">Incident title</label>
+      <input id="title" placeholder="Describe the issue" />
+      <label for="desc">Details</label>
+      <textarea id="desc" placeholder="What happened?"></textarea>
+      <label for="severity">Severity</label>
+      <select id="severity">
+        <option value="low">Low</option>
+        <option value="medium">Medium</option>
+        <option value="high">High</option>
+      </select>
+      <div class="location-row">
+        <button class="btn secondary" onclick="useCurrent()">Use current location</button>
+      </div>
+      <div class="grid split-inputs">
+        <input id="lat" placeholder="Latitude" />
+        <input id="lng" placeholder="Longitude" />
+      </div>
+      <button class="btn primary" onclick="submitIncident()">Submit report</button>
+    </div>
+  </section>
+  <script src="../assets/js/core/api.js"></script>
+  <script src="../assets/js/core/navbar.js"></script>
+  
+  <script src="../assets/js/core/pages/report.js"></script>
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sign Up | Safety</title>
+  <link rel="stylesheet" href="styles.css">
+  
+</head>
+<body>
+  <section class="auth-panel">
+    <div class="auth-card">
+      <div class="auth-logo">S</div>
+      <h1>Create your account</h1>
+      <input id="name" placeholder="Full name" />
+      <input id="email" type="email" placeholder="Email" />
+      <input id="mobile" placeholder="Mobile number" />
+      <input id="password" type="password" placeholder="Password" />
+      <button class="btn primary" onclick="register()">Register</button>
+      <p class="form-footer">Already have an account? <a href="login.html">Log in</a></p>
+    </div>
+  </section>
+  <script>
+    (function() {
+      if (localStorage.getItem('user')) {
+        window.location.href = 'dashboard.html';
+      }
+    })();
+    async function register() {
+      const name = document.getElementById('name').value.trim();
+      const email = document.getElementById('email').value.trim();
+      const mobile = document.getElementById('mobile').value.trim();
+      const password = document.getElementById('password').value.trim();
+      if (!name || !email || !mobile || !password) return alert('Please fill all fields');
+      try {
+        const res = await fetch('/api/auth/register', {
+          method: 'POST', headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ name, email, mobile, password })
+        });
+        const data = await res.json();
+        if (!res.ok) throw new Error(data.msg || 'Registration failed');
+        alert('Account created successfully');
+        window.location.href = 'login.html';
+      } catch (error) {
+        alert(error.message);
+      }
+    }
+  </script>
+</body>
+</html>

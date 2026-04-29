@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard | Safety</title>
+  <link rel="stylesheet" href="styles.css">
+  
+</head>
+<body>
+  <div id="navbar"></div>
+  
+  <section class="container">
+    <div class="page-header">
+      <div>
+        <span class="eyebrow">Dashboard</span>
+        <h1>Operations overview</h1>
+        <p class="page-subtitle">Quick access to total users, incidents and the latest activity across your safety network.</p>
+      </div>
+    </div>
+    <div class="grid stats-grid">
+      <div class="card stat-card-large">
+        <span class="stat-value" id="usersCount">--</span>
+        <p>Registered users</p>
+      </div>
+      <div class="card stat-card-large">
+        <span class="stat-value" id="incidentsCount">--</span>
+        <p>Incidents registered</p>
+      </div>
+      <div class="card stat-card-large">
+        <span class="stat-value">12</span>
+        <p>Active alerts</p>
+      </div>
+    </div>
+    <div class="grid">
+      <div class="card">
+        <h3>Latest report</h3>
+        <p>Last incident recorded near the central business district with medium severity and response tracking enabled.</p>
+      </div>
+      <div class="card">
+        <h3>Analytics snapshot</h3>
+        <p>Incident volume has increased 18% in the last 24 hours. Keep monitoring the feed for urgent updates.</p>
+      </div>
+    </div>
+  </section>
+  <script src="../assets/js/core/api.js"></script>
+  <script src="../assets/js/core/navbar.js"></script>
+  
+  <script>
+    async function renderDashboard() {
+      const usersRes = await fetch('/api/auth/summary');
+      const data = usersRes.ok ? await usersRes.json() : null;
+      document.getElementById('usersCount').textContent = data ? data.userCount : 'N/A';
+      document.getElementById('incidentsCount').textContent = data ? data.incidentCount : 'N/A';
+    }
+    renderDashboard().catch(() => {
+      document.getElementById('usersCount').textContent = 'N/A';
+      document.getElementById('incidentsCount').textContent = 'N/A';
+    });
+  </script>
+</body>
+</html>

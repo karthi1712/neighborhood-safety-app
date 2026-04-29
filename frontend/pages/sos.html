@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SOS | Safety</title>
+  <link rel="stylesheet" href="styles.css">
+  
+</head>
+<body>
+  <div id="navbar"></div>
+  
+  <section class="container page-panel sos-panel">
+    <div class="page-header">
+      <div>
+        <span class="eyebrow">Emergency</span>
+        <h1>Immediate help when you need it</h1>
+      </div>
+    </div>
+    <div class="card sos-card">
+      <p>Send an emergency alert with your current location. The system will notify the safety network instantly.</p>
+      <button class="btn primary" onclick="sendSOS()">Send SOS</button>
+    </div>
+  </section>
+  <script src="../assets/js/core/api.js"></script>
+  <script src="../assets/js/core/navbar.js"></script>
+  
+  <script>
+    async function sendSOS() {
+      if (!navigator.geolocation) {
+        return alert('Geolocation is not supported in this browser.');
+      }
+      navigator.geolocation.getCurrentPosition(async (position) => {
+        const user = JSON.parse(localStorage.getItem('user') || 'null');
+        await createIncident({
+          title: 'Emergency SOS',
+          description: 'User requested immediate assistance',
+          severity: 'high',
+          lat: position.coords.latitude,
+          lng: position.coords.longitude,
+          userId: user && user._id ? user._id : null
+        });
+        alert('SOS sent successfully. Help is on the way.');
+      });
+    }
+  </script>
+</body>
+</html>

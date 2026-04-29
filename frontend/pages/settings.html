@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Settings | Safety</title>
+  <link rel="stylesheet" href="styles.css">
+  
+</head>
+<body>
+  <div id="navbar"></div>
+  
+  <section class="container page-panel">
+    <div class="page-header">
+      <div>
+        <span class="eyebrow">Settings</span>
+        <h1>Personalize your safety experience</h1>
+      </div>
+    </div>
+    <div class="grid settings-grid">
+      <div class="card">
+        <h2>Notifications</h2>
+        <p>Control alert delivery and update preferences.</p>
+        <div class="toggle-row">
+          <span>Push notifications</span>
+          <label class="switch">
+            <input type="checkbox" checked />
+            <span class="slider"></span>
+          </label>
+        </div>
+        <div class="toggle-row">
+          <span>Email summaries</span>
+          <label class="switch">
+            <input type="checkbox" />
+            <span class="slider"></span>
+          </label>
+        </div>
+      </div>
+      <div class="card">
+        <h2>Privacy</h2>
+        <p>Manage location sharing and personal visibility.</p>
+        <div class="toggle-row">
+          <span>Share location</span>
+          <label class="switch">
+            <input type="checkbox" checked />
+            <span class="slider"></span>
+          </label>
+        </div>
+        <div class="toggle-row">
+          <span>Anonymous mode</span>
+          <label class="switch">
+            <input type="checkbox" />
+            <span class="slider"></span>
+          </label>
+        </div>
+      </div>
+      <div class="card">
+        <h2>Account</h2>
+        <label>Email updates</label>
+        <input placeholder="Email address" />
+        <label>Phone number</label>
+        <input placeholder="Mobile number" />
+        <button class="btn primary">Save settings</button>
+      </div>
+    </div>
+  </section>
+  <script src="../assets/js/core/api.js"></script>
+  <script src="../assets/js/core/navbar.js"></script>
+  
+</body>
+</html>
