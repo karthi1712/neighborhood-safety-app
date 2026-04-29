@@ -1,3 +1,5 @@
+const BASE = "https://neighborhood-safety-app.onrender.com/api";
+
 initPage(()=>{
   document.getElementById("app").innerHTML = `
     <h2>Profile</h2>

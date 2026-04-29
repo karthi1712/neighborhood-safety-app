@@ -1,3 +1,4 @@
+const BASE = "https://neighborhood-safety-app.onrender.com/api";
 initPage((device) => {
   const app = document.getElementById("app");
 

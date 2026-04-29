@@ -37,7 +37,7 @@ if (navContainer) {
           notificationsLink.style.display = 'inline-flex';
           const notificationsFetcher = typeof fetchNotifications === 'function'
             ? fetchNotifications
-            : (email) => fetch(`/api/auth/notifications?email=${encodeURIComponent(email)}`).then(res => res.json());
+            : ((email) => fetch(`https://neighborhood-safety-app.onrender.com/api/auth/notifications?email=${encodeURIComponent(email)}`).then(res => res.json()));
           notificationsFetcher(user.email)
             .then((notes) => {
               const unread = Array.isArray(notes)

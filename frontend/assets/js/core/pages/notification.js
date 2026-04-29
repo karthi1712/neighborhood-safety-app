@@ -1,3 +1,4 @@
+const BASE = "https://neighborhood-safety-app.onrender.com/api";
 const notificationsList = document.getElementById('notificationsList');
 const markAllReadBtn = document.getElementById('markAllRead');
 const currentUser = JSON.parse(localStorage.getItem('user') || 'null');

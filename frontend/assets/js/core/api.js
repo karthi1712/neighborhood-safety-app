@@ -1,4 +1,4 @@
-const BASE = "/api";
+const BASE = "https://neighborhood-safety-app.onrender.com/api";
 
 async function fetchIncidents() {
   const res = await fetch(`${BASE}/incidents`);

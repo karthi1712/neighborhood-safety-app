@@ -1,3 +1,4 @@
+const BASE = "https://neighborhood-safety-app.onrender.com/api";
 (async () => {
   const map = L.map("map").setView([20.59, 78.96], 5);
   L.tileLayer("https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png", {

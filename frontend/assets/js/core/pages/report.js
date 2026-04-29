@@ -1,3 +1,4 @@
+const BASE = "https://neighborhood-safety-app.onrender.com/api";
 function useCurrent() {
   navigator.geolocation.getCurrentPosition((pos) => {
     document.getElementById("lat").value = pos.coords.latitude;

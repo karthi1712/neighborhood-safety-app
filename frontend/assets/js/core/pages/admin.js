@@ -1,3 +1,4 @@
+const BASE = "https://neighborhood-safety-app.onrender.com/api";
 const adminApp = document.getElementById('adminApp');
 const user = JSON.parse(localStorage.getItem('user') || 'null');
 

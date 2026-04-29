@@ -1,3 +1,5 @@
+const BASE = "https://neighborhood-safety-app.onrender.com/api";
+
 const alertsGrid = document.getElementById('alertsGrid');
 
 async function loadAlerts() {

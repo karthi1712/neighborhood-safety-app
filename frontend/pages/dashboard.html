@@ -48,7 +48,8 @@
   
   <script>
     async function renderDashboard() {
-      const usersRes = await fetch('/api/auth/summary');
+      const BASE = window.BASE_URL || 'https://neighborhood-safety-app.onrender.com/api';
+      const usersRes = await fetch(`${BASE}/auth/summary`);
       const data = usersRes.ok ? await usersRes.json() : null;
       document.getElementById('usersCount').textContent = data ? data.userCount : 'N/A';
       document.getElementById('incidentsCount').textContent = data ? data.incidentCount : 'N/A';

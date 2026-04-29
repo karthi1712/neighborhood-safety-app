@@ -1,49 +1,47 @@
 // Simple local auth system (for now)
 
-function handleSignup(email, password) {
-  let users = JSON.parse(localStorage.getItem("users")) || [];
+async function handleSignup(email, password) {
+  const name = prompt("Enter name:");
+  const mobile = prompt("Enter mobile:");
 
-  const exists = users.find(u => u.email === email);
+  const res = await fetch(`${BASE}/auth/register`, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ name, email, password, mobile })
+  });
 
-  if (exists) {
-    alert("User already exists");
-    return;
+  const data = await res.json();
+
+  if (res.ok) {
+    alert("Signup successful!");
+  } else {
+    alert(data.msg);
   }
-
-  users.push({ email, password });
-  localStorage.setItem("users", JSON.stringify(users));
-
-  alert("Signup successful!");
 }
+async function handleLogin(email, password) {
+  const res = await fetch(`${BASE}/auth/login`, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ email, password })
+  });
 
-function handleLogin(email, password) {
-  let users = JSON.parse(localStorage.getItem("users")) || [];
+  const data = await res.json();
 
-  const user = users.find(
-    u => u.email === email && u.password === password
-  );
-
-  if (!user) {
-    alert("Invalid credentials");
-    return;
+  if (res.ok) {
+    localStorage.setItem("user", JSON.stringify(data.user));
+    window.location.href = "dashboard.html";
+  } else {
+    alert(data.msg);
   }
-
-  localStorage.setItem("currentUser", JSON.stringify(user));
-
-  alert("Login successful!");
-  window.location.href = "dashboard.html";
 }
 
 function logout() {
-  localStorage.removeItem("currentUser");
+  localStorage.removeItem("user");
   window.location.href = "login.html";
 }
 
 // Protect pages
 function protectPage() {
-  const user = localStorage.getItem("currentUser");
-
-  if (!user) {
-    window.location.href = "login.html";
-  }
+  const user = localStorage.getItem("user");
+  if (!user) window.location.href = "login.html";
 }

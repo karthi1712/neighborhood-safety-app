@@ -47,7 +47,8 @@
       }
 
       try {
-        const res = await fetch('/api/auth/login', {
+        const BASE = window.BASE_URL || 'https://neighborhood-safety-app.onrender.com/api';
+        const res = await fetch(`${BASE}/auth/login`, {
           method: 'POST', headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({ email, password, ...locationData })
         });

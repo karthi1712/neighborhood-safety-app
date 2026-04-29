@@ -1,3 +1,4 @@
+const BASE = "https://neighborhood-safety-app.onrender.com/api";
 let userLocation = null;
 let incidentMap = null;
 const incidentMarkers = {};

@@ -33,11 +33,18 @@
       const password = document.getElementById('password').value.trim();
       if (!name || !email || !mobile || !password) return alert('Please fill all fields');
       try {
-        const res = await fetch('/api/auth/register', {
+        // Use the BASE constant from api.js if available, otherwise fallback to the deployed URL
+        const BASE = window.BASE_URL || 'https://neighborhood-safety-app.onrender.com/api';
+        const res = await fetch(`${BASE}/auth/register`, {
           method: 'POST', headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({ name, email, mobile, password })
         });
-        const data = await res.json();
+        let data = {};
+        // Only parse JSON if response is not empty
+        const contentType = res.headers.get('content-type') || '';
+        if (contentType.includes('application/json')) {
+          data = await res.json();
+        }
         if (!res.ok) throw new Error(data.msg || 'Registration failed');
         alert('Account created successfully');
         window.location.href = 'login.html';
