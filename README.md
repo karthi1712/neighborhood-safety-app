@@ -228,109 +228,16 @@ The system follows a **client-server architecture**:
 
 ---
 ## **Structure**
-frontend/
-│
-├── styles.css
-│
-├── pages/
-│   ├── index.html
-│   ├── login.html
-│   ├── register.html
-│   ├── dashboard.html
-│   ├── report.html
-│   ├── feed.html
-│   ├── map.html
-│   ├── profile.html
-│   ├── alerts.html
-│   ├── leaderboard.html
-│   ├── analytics.html
-│   ├── community.html
-│   ├── resources.html
-│   ├── sos.html
-│   ├── settings.html
-│   ├── admin.html
-│   ├── contact.html
-│   └── about.html
-│
-├── js/
-│   │
-│   ├── core/
-│   │   ├── api.js
-│   │   ├── auth.js
-│   │   └── init.js
-│   │
-│   └── pages/
-│       ├── login.js
-│       ├── register.js
-│       ├── dashboard.js
-│       ├── report.js
-│       ├── feed.js
-│       ├── map.js
-│       ├── profile.js
-│       ├── alerts.js
-│       ├── leaderboard.js
-│       ├── analytics.js
-│       ├── community.js
-│       ├── resources.js
-│       ├── sos.js
-│       ├── settings.js
-│       ├── admin.js
-│       ├── contact.js
-│       └── about.js
-│
-└── assets/
-    ├── images/
-    ├── icons/
-    └── videos/
+## **Frontend**
+<img width="172" height="542" alt="image" src="https://github.com/user-attachments/assets/3c250998-1ad2-48ac-968d-f2cf9e8a5587" />
+<img width="236" height="486" alt="image" src="https://github.com/user-attachments/assets/8a3840a4-2de5-41da-bacb-1cee00c8296d" />
 
-backend/
-│
-├── package.json
-├── server.js
-├── .env
-│
-├── config/
-│   └── db.js
-│
-├── models/
-│   ├── User.js
-│   ├── Incident.js
-│   ├── Alert.js
-│   ├── ActivityLog.js
-│   └── CommunityPost.js
-│
-├── controllers/
-│   ├── authController.js
-│   ├── incidentController.js
-│   ├── adminController.js
-│   ├── alertController.js
-│   ├── profileController.js
-│   ├── analyticsController.js
-│   ├── communityController.js
-│   └── sosController.js
-│
-├── routes/
-│   ├── authRoutes.js
-│   ├── incidentRoutes.js
-│   ├── adminRoutes.js
-│   ├── alertRoutes.js
-│   ├── profileRoutes.js
-│   ├── analyticsRoutes.js
-│   ├── communityRoutes.js
-│   └── sosRoutes.js
-│
-├── middleware/
-│   ├── auth.js
-│   ├── admin.js
-│   └── errorHandler.js
-│
-├── utils/
-│   ├── generateToken.js
-│   └── logger.js
-│
-├── seed/
-│   └── seedData.js
-│
-└── uploads/
-    ├── reports/
-    └── profile/
+
+## **Backend**
+<img width="248" height="525" alt="image" src="https://github.com/user-attachments/assets/cdbe49cf-1d33-4334-ac23-9975740248ea" />
+<img width="232" height="511" alt="image" src="https://github.com/user-attachments/assets/09030c23-fb45-4ae6-a88d-bfa8313754c3" />
+
+## **Conclusion**
+The Neighborhood Watch & Incident Reporting Platform provides a secure and efficient solution for community safety management by combining real-time reporting, geolocation tracking, analytics, and communication features into a single integrated system.
+
+
