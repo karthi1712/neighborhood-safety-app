@@ -227,3 +227,110 @@ The system follows a **client-server architecture**:
 * Image/video upload for incidents
 
 ---
+## **Structure**
+frontend/
+│
+├── styles.css
+│
+├── pages/
+│   ├── index.html
+│   ├── login.html
+│   ├── register.html
+│   ├── dashboard.html
+│   ├── report.html
+│   ├── feed.html
+│   ├── map.html
+│   ├── profile.html
+│   ├── alerts.html
+│   ├── leaderboard.html
+│   ├── analytics.html
+│   ├── community.html
+│   ├── resources.html
+│   ├── sos.html
+│   ├── settings.html
+│   ├── admin.html
+│   ├── contact.html
+│   └── about.html
+│
+├── js/
+│   │
+│   ├── core/
+│   │   ├── api.js
+│   │   ├── auth.js
+│   │   └── init.js
+│   │
+│   └── pages/
+│       ├── login.js
+│       ├── register.js
+│       ├── dashboard.js
+│       ├── report.js
+│       ├── feed.js
+│       ├── map.js
+│       ├── profile.js
+│       ├── alerts.js
+│       ├── leaderboard.js
+│       ├── analytics.js
+│       ├── community.js
+│       ├── resources.js
+│       ├── sos.js
+│       ├── settings.js
+│       ├── admin.js
+│       ├── contact.js
+│       └── about.js
+│
+└── assets/
+    ├── images/
+    ├── icons/
+    └── videos/
+
+backend/
+│
+├── package.json
+├── server.js
+├── .env
+│
+├── config/
+│   └── db.js
+│
+├── models/
+│   ├── User.js
+│   ├── Incident.js
+│   ├── Alert.js
+│   ├── ActivityLog.js
+│   └── CommunityPost.js
+│
+├── controllers/
+│   ├── authController.js
+│   ├── incidentController.js
+│   ├── adminController.js
+│   ├── alertController.js
+│   ├── profileController.js
+│   ├── analyticsController.js
+│   ├── communityController.js
+│   └── sosController.js
+│
+├── routes/
+│   ├── authRoutes.js
+│   ├── incidentRoutes.js
+│   ├── adminRoutes.js
+│   ├── alertRoutes.js
+│   ├── profileRoutes.js
+│   ├── analyticsRoutes.js
+│   ├── communityRoutes.js
+│   └── sosRoutes.js
+│
+├── middleware/
+│   ├── auth.js
+│   ├── admin.js
+│   └── errorHandler.js
+│
+├── utils/
+│   ├── generateToken.js
+│   └── logger.js
+│
+├── seed/
+│   └── seedData.js
+│
+└── uploads/
+    ├── reports/
+    └── profile/
